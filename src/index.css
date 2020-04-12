@@ -1,0 +1,290 @@
+b
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background:radial-gradient(ellipse at center, rgba(0,0,66,1) 0%, rgba(0,0,0,1) 100%); /* w3c */
+
+  background-size:100% 100%;
+
+}
+
+.container-fluid {
+  min-height: 100%;
+}
+
+header{
+  padding: 50px 15px 0px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header h1{
+  color: black;
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+h4{
+  color: black;
+}
+
+main{
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section{
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.searchbox {
+  width:400px;
+  height: 50px;
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid #0000ff;
+  outline: none;
+  background: none;
+
+  background: rgba(#fff, .1);
+
+  color: rgb(83, 81, 81);
+  font-size: 20px;
+  font-weight: 300px;
+
+  transition: 0.4s ease-out;
+}
+
+.searchbox:focus{
+  box-shadow: 0px 3px 5px -2px #0000ff; /*bottom only*/
+}
+
+form {
+  display:flex;
+  flex-direction:row;
+  padding:2px;
+}
+
+.show{  
+-webkit-animation: fadein 2s;
+background: none;
+outline:none;
+border:none;
+margin-left:-45px;
+margin-bottom: 10px;
+border-top-right-radius: 8px;
+border-bottom-right-radius: 8px;
+
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hidden{  
+  opacity: 0.0;
+  transition: opacity 2s;
+  -webkit-transition: opacity 2s;
+
+  color: #4484c4;
+  background: none;
+  outline:none;
+  border:none;
+  margin-left:-45px;
+  margin-bottom: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.show:focus {
+  outline:0;
+  border:none;
+ }
+
+ .fa-search{
+   color:#0000ff;
+   font-size: 24px;
+}
+
+.fa-search:hover{
+
+}
+.move{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:150px;
+}
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+}
+
+.results .result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.333333%;
+  min-width: 250px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  }
+
+.results .result img{
+  display: block;
+  width:100%;
+  height: 445px;
+}
+
+ .results .result:hover img{
+  background-color: rgba(0,0,0, 0.6);
+  opacity: 0.7;
+  color:#223343;
+  border:3px solid  rgb(70,130,180);
+  box-shadow: 0px 0px 8px 3px #0000ff;
+
+}
+
+.nav{
+  color: white;
+  width: 100%;
+  height:100px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-brand{
+}
+
+.popup{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.9);
+ }
+
+ .content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  color: #fff;
+  height:500px;
+  min-height: 100%;  
+  min-height: 111vh;      
+  align-items: center;
+}
+
+img{
+  height: 500px;
+}
+
+.card{
+  height:500px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.card-group{
+  width:700px;
+  font-size:12px;
+  margin:10px 0 10px 0;
+  letter-spacing:1px;
+  line-height:20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 120px -55px rgba(0, 0, 255, 0.6);
+}
+
+.card-group:hover{
+  box-shadow: 0px 0px 150px -45px rgba(0, 0, 255, 0.6);
+ }
+
+.bg-cust{
+  width: 400px;
+  index: 2;
+}
+
+ .text-title{
+  color:white;
+  font-weight:400;
+  text-transform: uppercase;
+  text-align:left;
+  font-size:24px;
+  margin:10px 0 10px 0;
+  padding:0 20px 0 20px;
+  letter-spacing:1px;
+ }
+
+ .card-subtitle{
+  font-size: 14px;
+  font-weight: bold;
+  color:rgb(70,130,180);
+  margin:10px 0 10px 0;
+  padding:0 20px 0 20px;
+ }
+
+.text-p{
+  color:white;
+  font-size:12px;
+  padding:0 20px 0 20px;
+  letter-spacing:1px;
+  margin:10px 0 10px 0;
+  line-height:20px;
+}
+
+.blue-span{
+  color: #0000ff;
+}
+
+.close-btn{
+  font-family: 'Montserrat', sans-serif;
+  font-size:14px;
+  color: #040485;
+  border:2px solid #040485;;
+  padding:5px;
+  border-radius:5px;
+
+  position: absolute;
+  bottom: 20px;
+  left: 99%;
+  width: 60px;
+  margin-left: -104.5px; 
+
+  background-color: transparent;
+}
+
+.text-link{
+  color: white;
+}
+.text-link:hover {
+  color: #04046d;
+  font-weight: bold;
+}
+
+.tags-container{
+  margin-left:15px;
+}
+
+.tags-container span {
+  border: 2px solid #0000ff;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  margin: 5px;
+}
