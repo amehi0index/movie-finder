@@ -1,6 +1,7 @@
 import React, {useState, createContext } from 'react';
 
-let API_KEY = process.env.REACT_APP_API_KEY;
+//let API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY ='dfe6d885';
 
 export const MovieContext = createContext();
 

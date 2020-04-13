@@ -9,18 +9,20 @@ const MovieList = () => {
 	return (
 							<section className="results">
 								<div className ="move">
-									{movies.map(movie => {    
-										return 	<Movie name={movie.Title} 
+			
+									{ movies && movies.map(movie => {    
+										return <Movie name={movie.Title} 
 										year={movie.Year} 
 										id={movie.imdbID} 
 										poster={movie.Poster} 
 										key={movie.imdbID} 
 										onClick={openPopup} 
 										movie={movie}
-										/>
-									})}
-									</div>
-									
+										/> 
+
+									})}  
+
+								</div>
 							</section>
 	); 
 };

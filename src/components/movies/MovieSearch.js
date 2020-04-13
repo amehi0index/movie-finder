@@ -2,18 +2,25 @@ import React, { useState, useContext } from 'react';
 import {MovieContext} from '../../context/MovieContext'
 import { FaSearch} from 'react-icons/fa';
 import { IconContext } from "react-icons";
+import { AlertContext }from '../../context/alert/alertContext';
 
 //Adds new movies to movie array
 const MovieSearch = () => {
-	
+	const alertContext = useContext(AlertContext);
+	const { setAlert } = alertContext;
+
 	const { searchMovies } = useContext(MovieContext);
 	
 	const [text, setText] = useState('');
 	
 	const getSearch = (e) =>{ //onSubmit
 		e.preventDefault();
-		searchMovies(text);
-		setText('');
+		if ( text==='undefined'){
+				setAlert('Please Make a Valid Selection', 'light');
+		} else{
+			searchMovies(text);
+			setText('');
+		}
 	}
 
 	const updateSearch = (e) =>{ //onChange
