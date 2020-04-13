@@ -9,7 +9,6 @@ const MovieList = () => {
 	return (
 							<section className="results">
 								<div className ="move">
-			
 									{ movies && movies.map(movie => {    
 										return <Movie name={movie.Title} 
 										year={movie.Year} 
@@ -19,9 +18,7 @@ const MovieList = () => {
 										onClick={openPopup} 
 										movie={movie}
 										/> 
-
 									})}  
-
 								</div>
 							</section>
 	); 
