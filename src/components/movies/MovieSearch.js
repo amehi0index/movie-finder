@@ -1,31 +1,25 @@
 import React, { useState, useContext } from 'react';
+import Spinner from '../layout/Spinner';
 import {MovieContext} from '../../context/MovieContext'
-import { FaSearch} from 'react-icons/fa';
-import { IconContext } from "react-icons";
-import { AlertContext }from '../../context/alert/alertContext';
 
 //Adds new movies to movie array
 const MovieSearch = () => {
-	const alertContext = useContext(AlertContext);
-	const { setAlert } = alertContext;
 
-	const { searchMovies } = useContext(MovieContext);
+	const { searchMovies, loading  } = useContext(MovieContext);
 	
 	const [text, setText] = useState('');
 	
 	const getSearch = (e) =>{ //onSubmit
 		e.preventDefault();
-		if ( text==='undefined'){
-				setAlert('Please Make a Valid Selection', 'light');
-		} else{
-			searchMovies(text);
-			setText('');
-		}
+		searchMovies(text);
+		setText('');
 	}
 
 	const updateSearch = (e) =>{ //onChange
 		setText(e.target.value);
  }
+
+ if (loading) return <Spinner />;
 
 return(
 	 <section className="searchbox-wrap">
@@ -36,8 +30,8 @@ return(
 		        placeholder="Search for a Movie..." 
 		     		onChange={updateSearch}
 		      />  
-		    	{text.length > 0 ? (<button className={"show"} type="submit"> <i className="fas fa-search"></i></button> )
-					: (<button className={"hidden"} disabled aria-disabled="true" type="submit"> <i className="fas fa-search"></i></button> )}
+		    	{text.length > 0 ? (<button className={"show-search"} type="submit"> <i className="fas fa-search"></i></button> )
+					: (<button className={"hide-search"} disabled aria-disabled="true" type="submit"> <i className="fas fa-search"></i></button> )}
 				
  				</form> 
 	  </section>

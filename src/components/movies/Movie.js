@@ -1,8 +1,7 @@
 import React from 'react';
-import MovieDetails from './MovieDetails'
 import {Link} from 'react-router-dom';
 
-const Movie = ({ poster, id }) => {   //ES6 convention
+const Movie = ({ poster, id }) => {  
 
 	return(
 		<div className="result"  > 

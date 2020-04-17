@@ -1,9 +1,8 @@
 import React from 'react';
-import {MovieContext} from '../../context/MovieContext';
 import MovieSearch from '../movies/MovieSearch';
 
 
-const Nav = () => {   //ES6 convention
+const Nav = () => {  
 	
 	return(
         //get movie name from embedded <Movie  name={movie.name} /> in MovieList.js
