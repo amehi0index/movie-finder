@@ -2,7 +2,7 @@ import React, {useReducer, createContext } from 'react';
 import axios from 'axios';
 import MovieReducer from './movieReducer';
 import {
-  SEARCH_MOVIES, OPEN_POPUP, CLOSE_POPUP, SET_LOADING, SET_SEARCH
+  SEARCH_MOVIES, OPEN_POPUP, CLOSE_POPUP, SET_LOADING, SET_SEARCH, CLEAR_MOVIES
 } from './types';
 
 //let API_KEY = process.env.REACT_APP_API_KEY;
@@ -29,12 +29,11 @@ export const MovieProvider = (props) =>{
 	const response = await axios.get(`http://www.omdbapi.com/?s=${text}&apikey=${API_KEY}`);
 	
 		dispatch({
-		type: SEARCH_MOVIES,
-		payload: response.data.Search  		//setMovies(data.Search);
+			type: SEARCH_MOVIES,
+			payload: response.data.Search  		//setMovies(data.Search);
 		});
 	};
 		
-
 	//Get Selected Movie
 	const openPopup = async (match) => {
 		setLoading();
@@ -47,10 +46,14 @@ export const MovieProvider = (props) =>{
 		})
 	};
 
+	//Close Popup
 	const closePopup = () => dispatch({ type: CLOSE_POPUP  });  //setSelectd
 
 	//SetSearch
 	//const setSearch = (text) => dispatch ({ type: SET_SEARCH, payload: text });
+
+	//Clear Movies
+	const clearMovies= () => dispatch({ type: CLEAR_MOVIES  });
 
 	//Set Loading
 	const setLoading = () => dispatch ({ type: SET_LOADING });
@@ -64,7 +67,8 @@ export const MovieProvider = (props) =>{
 				loading: state.loading,
 				openPopup,
 				closePopup,
-				searchMovies
+				searchMovies,
+				clearMovies
 				}}> 
 				{props.children}  
 		</MovieContext.Provider>

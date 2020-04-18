@@ -7,9 +7,9 @@ function Popup({ selected}) {
     const { closePopup } = useContext(MovieContext); 
 
     useEffect(()=> {
-        closePopup(selected);
+        closePopup();
 		//eslint-disable-next-line
-		}, []);
+	}, []);
     
 	return (
 	    <section className="popup">
@@ -39,11 +39,12 @@ function Popup({ selected}) {
                         <li className="list-group-item bg-transparent"><span className="blue-span pr-2">Score:</span>{ selected.Metascore}</li>
                     </ul>
 
-                    {selected && (<button className="close-btn" onClick={closePopup} ><Link className="text-link" to="/movielist/"  style={{ textDecoration: 'none'}}>Close</Link></button>
-            )}
+                   
 
                 </div>
+                
             </div>
+            {selected && (<button className="close-btn" onClick={closePopup} ><Link className="text-link" to="/movielist/"  style={{ textDecoration: 'none'}}>Close</Link></button>)}
             </div>
 
          

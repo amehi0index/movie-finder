@@ -5,7 +5,7 @@ import {MovieContext} from '../../context/MovieContext'
 //Adds new movies to movie array
 const MovieSearch = () => {
 
-	const { searchMovies, loading  } = useContext(MovieContext);
+	const { searchMovies, loading } = useContext(MovieContext);
 	
 	const [text, setText] = useState('');
 	
@@ -22,7 +22,8 @@ const MovieSearch = () => {
  if (loading) return <Spinner />;
 
 return(
-	 <section className="searchbox-wrap">
+	<>
+		<section className="searchbox-wrap">
 			  <form onSubmit={getSearch} className="search-form">
 		      <input type="text"
 		        className="searchbox"
@@ -30,11 +31,11 @@ return(
 		        placeholder="Search for a Movie..." 
 		     		onChange={updateSearch}
 		      />  
-		    	{text.length > 0 ? (<button className={"show-search"} type="submit"> <i className="fas fa-search"></i></button> )
+		    	{text.length > 0 ? (<button className={"show-search"} type="submit"> <i className="fas fa-search"/></button> )
 					: (<button className={"hide-search"} disabled aria-disabled="true" type="submit"> <i className="fas fa-search"></i></button> )}
-				
- 				</form> 
-	  </section>
+				</form> 
+		</section>
+	</>
 	);
 
 };

@@ -10,18 +10,19 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
+    <MovieProvider>
       <Router>
-        <MovieProvider>
-          <Nav />
+        <Nav />
           <main>
-            <MovieList />
+            <Home />
           </main>
           <Switch>
+            <Route path='/ ' component={Home} />
             <Route path='/moviedetails/:id' component={MovieDetails} />
             <Route path="/popup" component={Popup} />
           </Switch>
-        </MovieProvider>
-      </Router>
+       </Router>
+    </MovieProvider>
   );
 }
 
