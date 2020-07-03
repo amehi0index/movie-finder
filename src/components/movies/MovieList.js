@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Movie from './Movie';
 import { MovieContext } from '../../context/MovieContext';
 
@@ -9,15 +9,15 @@ const MovieList = () => {
 		return (
 			<section className="results">
 				<div className ="move">
-					{ movies && movies.map(movie => {    
-							return <Movie name={movie.Title} 
-								year={movie.Year} 
-								id={movie.imdbID} 
-								poster={movie.Poster} 
-								key={movie.imdbID} 
-								onClick={openPopup} 
-								movie={movie}
-								/> 
+					{ movies && movies.map((movie, index) => {    
+						return <Movie 
+							key={index}
+							name={movie.Title} 
+							year={movie.Year} 
+							id={movie.imdbID} 
+							poster={movie.Poster} 
+							onClick={openPopup} 
+							movie={movie}/> 
 					})}  
 				</div>
 			</section>
